@@ -25,7 +25,7 @@ __pycache__/
 .Python
 build/
 develop-eggs/
-dist/
+/dist/
 downloads/
 eggs/
 .eggs/
@@ -44,7 +44,7 @@ MANIFEST
 # Frontend Node Modules & Assets
 node_modules/
 frontend/node_modules/
-frontend/dist/
+# frontend/dist/
 frontend/.env
 frontend/.builder/
 .builder/

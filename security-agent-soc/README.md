@@ -4,6 +4,16 @@ SENTIAL AI is an enterprise-grade, autonomous Security Operations Center (SOC) t
 
 ---
 
+## 📌 Problem Statement 7 Compliance: AI-Assisted SOC Threat Monitoring
+
+SENTIAL AI is engineered specifically to satisfy **Problem Statement 7**, introducing an autonomous threat triage agent that resolves the core bottlenecks of traditional enterprise security centers:
+* **Defeating Alert Fatigue**: Automatically triages and filters benign operations (e.g. routine microservice health checks) from the active alert queue, saving thousands of manual analyst auditing hours.
+* **AI-Driven Triaging**: Leverages Google Gemini 2.5-Flash utilizing Strict Structured Outputs to execute granular threat scoring (0-100), attack vector classification, and custom remediation checklists.
+* **Multi-Channel Escalation Loops**: Automatically matches the active operator's profile email to trigger secure SMTP email alerts, logs webhooks to Slack workspace channels, and broadcasts real-time FCM browser push notifications.
+* **Active Threat Containment**: Translates threat scores into instant mitigation, supporting one-click network host isolation and firewall IP bans directly from the dashboard.
+
+---
+
 ## 📐 System Pipeline Architecture
 
 Below is the end-to-end data flow pipeline of SENTIAL AI:
