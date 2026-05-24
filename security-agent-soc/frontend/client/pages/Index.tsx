@@ -411,13 +411,13 @@ export default function Index() {
                     <table className="w-full text-xs">
                       <thead className="bg-slate-950 border-b border-slate-800 text-slate-400 font-bold uppercase text-[10px] tracking-wider">
                         <tr>
-                          <th className="px-4 py-3 text-left">TIMESTAMP</th>
-                          <th className="px-4 py-3 text-left">SOURCE IP</th>
-                          <th className="px-4 py-3 text-left">USER</th>
-                          <th className="px-4 py-3 text-left">ATTACK PATTERN</th>
-                          <th className="px-4 py-3 text-center">SCORE</th>
-                          <th className="px-4 py-3 text-center">PRIORITY</th>
-                          <th className="px-4 py-3 text-center">STATUS</th>
+                          <th className="px-4 py-3 text-left whitespace-nowrap">TIMESTAMP</th>
+                          <th className="px-4 py-3 text-left whitespace-nowrap">SOURCE IP</th>
+                          <th className="px-4 py-3 text-left whitespace-nowrap">USER</th>
+                          <th className="px-4 py-3 text-left whitespace-nowrap">ATTACK PATTERN</th>
+                          <th className="px-4 py-3 text-center whitespace-nowrap">SCORE</th>
+                          <th className="px-4 py-3 text-center whitespace-nowrap">PRIORITY</th>
+                          <th className="px-4 py-3 text-center whitespace-nowrap">STATUS</th>
                         </tr>
                       </thead>
                       <tbody className="divide-y divide-slate-800">
@@ -441,16 +441,16 @@ export default function Index() {
                               <td className="px-4 py-3 font-mono text-slate-500 text-[10px] whitespace-nowrap">
                                 {log.timestamp}
                               </td>
-                              <td className="px-4 py-3 font-mono text-slate-200 font-semibold">
+                              <td className="px-4 py-3 font-mono text-slate-200 font-semibold whitespace-nowrap">
                                 {log.sourceIP}
                               </td>
-                              <td className="px-4 py-3 text-slate-300">
+                              <td className="px-4 py-3 text-slate-300 whitespace-nowrap">
                                 {log.username}
                               </td>
-                              <td className="px-4 py-3 text-slate-200 font-semibold">
+                              <td className="px-4 py-3 text-slate-200 font-semibold whitespace-nowrap">
                                 {log.eventType}
                               </td>
-                              <td className="px-4 py-3 text-center">
+                              <td className="px-4 py-3 text-center whitespace-nowrap">
                                 <span
                                   className={`inline-block px-1.5 py-0.5 rounded font-bold font-mono text-[10px] ${
                                     log.false_positive
@@ -467,9 +467,9 @@ export default function Index() {
                                   {log.score}
                                 </span>
                               </td>
-                              <td className="px-4 py-3 text-center">
+                              <td className="px-4 py-3 text-center whitespace-nowrap">
                                 <span
-                                  className={`inline-block px-2 py-0.5 rounded font-bold text-[9px] ${
+                                  className={`inline-block px-2 py-0.5 rounded font-bold text-[9px] whitespace-nowrap ${
                                     log.false_positive
                                       ? "bg-green-950/40 text-green-400"
                                       : log.priority === "CRITICAL"

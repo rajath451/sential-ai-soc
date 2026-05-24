@@ -83,11 +83,11 @@ export default function Logs() {
             <table className="w-full text-xs">
               <thead className="bg-slate-950 border-b border-slate-800 text-slate-400 font-bold uppercase text-[10px] tracking-wider">
                 <tr>
-                  <th className="px-3 md:px-6 py-3 text-left">TIMESTAMP</th>
-                  <th className="px-3 md:px-6 py-3 text-center">SEVERITY</th>
-                  <th className="px-3 md:px-6 py-3 text-left">EVENT CATEGORY</th>
-                  <th className="px-3 md:px-6 py-3 text-left">SOURCE ENTITY</th>
-                  <th className="px-3 md:px-6 py-3 text-left font-semibold">RAW LOG line DESCRIPTION</th>
+                  <th className="px-3 md:px-6 py-3 text-left whitespace-nowrap">TIMESTAMP</th>
+                  <th className="px-3 md:px-6 py-3 text-center whitespace-nowrap">SEVERITY</th>
+                  <th className="px-3 md:px-6 py-3 text-left whitespace-nowrap">EVENT CATEGORY</th>
+                  <th className="px-3 md:px-6 py-3 text-left whitespace-nowrap">SOURCE ENTITY</th>
+                  <th className="px-3 md:px-6 py-3 text-left font-semibold whitespace-nowrap">RAW LOG line DESCRIPTION</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-850">
@@ -106,9 +106,9 @@ export default function Logs() {
                       <td className="px-3 md:px-6 py-2.5 md:py-4 text-xs font-mono text-slate-500 whitespace-nowrap">
                         {log.timestamp}
                       </td>
-                      <td className="px-3 md:px-6 py-2.5 md:py-4 text-center">
+                      <td className="px-3 md:px-6 py-2.5 md:py-4 text-center whitespace-nowrap">
                         <span
-                          className={`inline-block text-[9px] font-bold px-2 py-0.5 rounded ${
+                          className={`inline-block text-[9px] font-bold px-2 py-0.5 rounded whitespace-nowrap ${
                             log.false_positive
                               ? "bg-green-950/40 text-green-400 border border-green-900/30"
                               : log.priority === "CRITICAL"
@@ -121,13 +121,13 @@ export default function Logs() {
                           {log.false_positive ? "BENIGN" : log.priority}
                         </span>
                       </td>
-                      <td className="px-3 md:px-6 py-2.5 md:py-4 text-xs font-semibold text-slate-200">
+                      <td className="px-3 md:px-6 py-2.5 md:py-4 text-xs font-semibold text-slate-200 whitespace-nowrap">
                         {log.eventType}
                       </td>
                       <td className="px-3 md:px-6 py-2.5 md:py-4 text-xs font-mono text-slate-300 font-bold whitespace-nowrap">
                         IP: {log.sourceIP} | User: {log.username}
                       </td>
-                      <td className="px-3 md:px-6 py-2.5 md:py-4 text-xs text-slate-400 font-mono break-all max-w-sm">
+                      <td className="px-3 md:px-6 py-2.5 md:py-4 text-xs text-slate-400 font-mono min-w-[280px] break-words">
                         {log.message}
                       </td>
                     </tr>
