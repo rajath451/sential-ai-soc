@@ -261,6 +261,32 @@ export default function Settings() {
         {activeTab === "workspace" && (
           <div className="space-y-6 animate-fadeIn">
             
+            {/* Workspace Settings Explanation Banner */}
+            <div className="bg-blue-500/5 border border-blue-500/10 rounded-2xl p-5 shadow-sm space-y-3">
+              <div className="flex gap-3">
+                <HelpCircle className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
+                <div className="space-y-1.5 text-xs text-slate-700 dark:text-slate-350 leading-relaxed">
+                  <h4 className="font-black text-slate-900 dark:text-white uppercase tracking-wide">Workspace Configuration Blueprint</h4>
+                  <p className="text-[10px] text-slate-500 dark:text-slate-400">
+                    Your <strong>Workspace URL</strong> (<code className="font-bold text-blue-500">{wsUrl}</code>) serves as the secure address domain where authorized SOC operators establish connections and access telemetry data.
+                  </p>
+                  <p className="text-[10px] text-slate-500 dark:text-slate-400">
+                    Within these panels, you have administrative clearance to:
+                  </p>
+                  <ul className="list-disc pl-4 space-y-1 text-[10px] text-slate-500 dark:text-slate-400">
+                    <li>Modify workspace metadata (Language, Approved auto-join email domains, Ingestion channels).</li>
+                    <li>Configure clearance authorizations & invite/manage team operator permissions.</li>
+                    <li>Toggle operations like GIF support, image alt-text, and daily Do Not Disturb hours.</li>
+                    <li>Set telemetry Data Retention limits and manage machine API integration keys.</li>
+                    <li>Perform an emergency, full <strong>Workspace Destruction</strong> to wipe all SOC audit details permanently from servers.</li>
+                  </ul>
+                  <p className="text-[10px] font-semibold text-blue-500">
+                    As an authorized coordinator, any preferences you save here will be applied in real-time across the Vigilance Protocol.
+                  </p>
+                </div>
+              </div>
+            </div>
+
             {/* Workspace details card */}
             <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 shadow-sm space-y-5">
               <h3 className="text-sm font-bold text-slate-900 dark:text-white flex items-center gap-2">

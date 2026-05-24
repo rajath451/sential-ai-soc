@@ -136,12 +136,11 @@ class AppHandler(SimpleHTTPRequestHandler):
                     ok, info = send_slack_alert(message)
                     response["alerts"].append({"type": "slack", "ok": ok, "info": info})
                     
-                    # Target both default notify list and the logged-in user email
-                    default_tos = [s.strip() for s in (os.getenv("ALERT_TO") or "").split(",") if s.strip()]
+                    # Route email alerts strictly to the logged-in user's email address when available
                     if user_email:
-                        to_addrs = list(set(default_tos + [user_email]))
+                        to_addrs = [user_email]
                     else:
-                        to_addrs = default_tos
+                        to_addrs = [s.strip() for s in (os.getenv("ALERT_TO") or "").split(",") if s.strip()]
 
                     ok, info = send_email_alert(
                         subject=f"Security Alert: {assessment.priority.upper()} {assessment.event.src_ip}",
