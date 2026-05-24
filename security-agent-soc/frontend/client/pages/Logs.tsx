@@ -46,7 +46,7 @@ export default function Logs() {
 
   return (
     <Layout title="SIEM Logs Manager">
-      <div className="p-8 space-y-6">
+      <div className="p-4 sm:p-6 md:p-8 space-y-6">
         
         {/* Log Filters */}
         <div className="flex flex-col md:flex-row gap-4 bg-slate-900 border border-slate-800 p-4 rounded-xl shadow-md justify-between items-center">
@@ -61,7 +61,7 @@ export default function Logs() {
             />
           </div>
 
-          <div className="flex gap-2 w-full md:w-auto justify-end">
+          <div className="flex gap-2 w-full md:w-auto justify-start md:justify-end">
             <select
               value={filterSeverity}
               onChange={(e) => setFilterSeverity(e.target.value)}
@@ -83,17 +83,17 @@ export default function Logs() {
             <table className="w-full text-xs">
               <thead className="bg-slate-950 border-b border-slate-800 text-slate-400 font-bold uppercase text-[10px] tracking-wider">
                 <tr>
-                  <th className="px-6 py-3 text-left">TIMESTAMP</th>
-                  <th className="px-6 py-3 text-center">SEVERITY</th>
-                  <th className="px-6 py-3 text-left">EVENT CATEGORY</th>
-                  <th className="px-6 py-3 text-left">SOURCE ENTITY</th>
-                  <th className="px-6 py-3 text-left font-semibold">RAW LOG line DESCRIPTION</th>
+                  <th className="px-3 md:px-6 py-3 text-left">TIMESTAMP</th>
+                  <th className="px-3 md:px-6 py-3 text-center">SEVERITY</th>
+                  <th className="px-3 md:px-6 py-3 text-left">EVENT CATEGORY</th>
+                  <th className="px-3 md:px-6 py-3 text-left">SOURCE ENTITY</th>
+                  <th className="px-3 md:px-6 py-3 text-left font-semibold">RAW LOG line DESCRIPTION</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-850">
                 {filteredLogs.length === 0 ? (
                   <tr>
-                    <td colSpan={5} className="px-6 py-16 text-center text-slate-500 text-xs">
+                    <td colSpan={5} className="px-3 md:px-6 py-16 text-center text-slate-500 text-xs">
                       No security audit entries found in session. Go to Overview to analyze logs.
                     </td>
                   </tr>
@@ -103,10 +103,10 @@ export default function Logs() {
                       key={idx}
                       className="hover:bg-slate-800/60 transition-colors"
                     >
-                      <td className="px-6 py-4 text-xs font-mono text-slate-500 whitespace-nowrap">
+                      <td className="px-3 md:px-6 py-2.5 md:py-4 text-xs font-mono text-slate-500 whitespace-nowrap">
                         {log.timestamp}
                       </td>
-                      <td className="px-6 py-4 text-center">
+                      <td className="px-3 md:px-6 py-2.5 md:py-4 text-center">
                         <span
                           className={`inline-block text-[9px] font-bold px-2 py-0.5 rounded ${
                             log.false_positive
@@ -121,13 +121,13 @@ export default function Logs() {
                           {log.false_positive ? "BENIGN" : log.priority}
                         </span>
                       </td>
-                      <td className="px-6 py-4 text-xs font-semibold text-slate-200">
+                      <td className="px-3 md:px-6 py-2.5 md:py-4 text-xs font-semibold text-slate-200">
                         {log.eventType}
                       </td>
-                      <td className="px-6 py-4 text-xs font-mono text-slate-300 font-bold whitespace-nowrap">
+                      <td className="px-3 md:px-6 py-2.5 md:py-4 text-xs font-mono text-slate-300 font-bold whitespace-nowrap">
                         IP: {log.sourceIP} | User: {log.username}
                       </td>
-                      <td className="px-6 py-4 text-xs text-slate-400 font-mono break-all max-w-sm">
+                      <td className="px-3 md:px-6 py-2.5 md:py-4 text-xs text-slate-400 font-mono break-all max-w-sm">
                         {log.message}
                       </td>
                     </tr>
@@ -137,6 +137,7 @@ export default function Logs() {
             </table>
           </div>
         </div>
+
 
         {/* Pagination Indicator */}
         <div className="flex items-center justify-between text-xs text-slate-500">

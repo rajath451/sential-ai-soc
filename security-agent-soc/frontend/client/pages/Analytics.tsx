@@ -111,7 +111,7 @@ export default function Analytics() {
 
   return (
     <Layout title="AI threat Intelligence Analytics">
-      <div className="p-8 space-y-6">
+      <div className="p-4 sm:p-6 md:p-8 space-y-6">
         
         {/* Analytics Overview Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">

@@ -3,7 +3,7 @@ import { Layout } from "@/components/Layout";
 import { 
   Bell, Lock, Key, Shield, UserPlus, Trash2, Globe, Link, HelpCircle, 
   AlertCircle, Save, Settings2, Sparkles, Image, Compass, MessageSquare, 
-  History, Eye, FileText, CheckCircle2, AlertTriangle, KeyRound
+  History, Eye, FileText, CheckCircle2, AlertTriangle, KeyRound, Loader2
 } from "lucide-react";
 import { toast } from "sonner";
 
@@ -217,7 +217,7 @@ export default function Settings() {
 
   return (
     <Layout title="SIEM Workspace Administration">
-      <div className="p-8 space-y-6 max-w-5xl">
+      <div className="p-4 sm:p-6 md:p-8 space-y-6 max-w-5xl">
         
         {/* Workspace Quick Summary Banner */}
         <div className="bg-gradient-to-r from-blue-600/10 via-blue-500/5 to-transparent border border-blue-500/20 rounded-2xl p-6 shadow-md flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
@@ -241,7 +241,7 @@ export default function Settings() {
         </div>
 
         {/* Workspace Admin Navigation Tabs */}
-        <div className="flex border-b border-slate-200 dark:border-slate-800 gap-1 overflow-x-auto pb-px">
+        <div className="flex border-b border-slate-200 dark:border-slate-800 gap-1 overflow-x-auto pb-px no-scrollbar flex-nowrap">
           {(["workspace", "members", "operations", "security"] as const).map((tab) => (
             <button
               key={tab}

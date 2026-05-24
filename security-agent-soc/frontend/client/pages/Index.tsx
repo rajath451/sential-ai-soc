@@ -240,7 +240,7 @@ export default function Index() {
 
   return (
     <Layout title="Autonomous Log Analyzer">
-      <div className="p-6 space-y-6">
+      <div className="p-4 sm:p-6 space-y-6">
         
         {/* Input Panel */}
         <div className="bg-slate-900 border border-slate-800 rounded-xl p-5 shadow-lg">
@@ -336,7 +336,7 @@ export default function Index() {
         {analyzed && (
           <>
             {/* Stats Dashboard Grid */}
-            <div className="grid grid-cols-2 md:grid-cols-6 gap-3">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
               <div className="bg-slate-900 border border-slate-800 rounded-xl p-3.5 shadow-md">
                 <div className="text-slate-500 text-xs font-semibold mb-1">Total Events</div>
                 <div className="text-2xl font-bold text-white">{stats.total}</div>
@@ -382,7 +382,7 @@ export default function Index() {
                     />
                   </div>
 
-                  <div className="flex gap-2 flex-wrap justify-end w-full md:w-auto">
+                  <div className="flex gap-2 flex-wrap justify-start md:justify-end w-full md:w-auto">
                     {(["ALL", "CRITICAL", "HIGH", "MEDIUM", "LOW", "BENIGN"] as const).map(
                       (p) => (
                         <button
@@ -406,6 +406,7 @@ export default function Index() {
 
                 {/* Main Alerts Table */}
                 <div className="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden shadow-lg">
+
                   <div className="overflow-x-auto">
                     <table className="w-full text-xs">
                       <thead className="bg-slate-950 border-b border-slate-800 text-slate-400 font-bold uppercase text-[10px] tracking-wider">

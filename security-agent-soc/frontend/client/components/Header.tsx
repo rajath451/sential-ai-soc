@@ -1,9 +1,9 @@
 import { useNavigate } from "react-router-dom";
-import { Bell, Settings, Search, LogOut } from "lucide-react";
+import { Bell, Settings, Search, LogOut, Menu } from "lucide-react";
 import { useAuth } from "@/context/AuthContext";
 import { toast } from "sonner";
 
-export function Header({ title }: { title: string }) {
+export function Header({ title, onMenuClick }: { title: string; onMenuClick?: () => void }) {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
 
@@ -24,9 +24,20 @@ export function Header({ title }: { title: string }) {
   };
 
   return (
-    <header className="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 px-8 py-4 transition-colors duration-300">
+    <header className="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 px-4 md:px-8 py-3 md:py-4 transition-colors duration-300">
       <div className="flex items-center justify-between">
-        <h2 className="text-xl font-bold text-slate-900 dark:text-white">{title}</h2>
+        <div className="flex items-center gap-2">
+          <button
+            onClick={onMenuClick}
+            className="lg:hidden p-1.5 -ml-1 rounded-lg text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 dark:text-slate-400 cursor-pointer mr-1"
+            aria-label="Open sidebar menu"
+          >
+            <Menu className="w-5.5 h-5.5" />
+          </button>
+          <h2 className="text-lg md:text-xl font-bold text-slate-900 dark:text-white truncate max-w-[160px] sm:max-w-xs md:max-w-none" title={title}>
+            {title}
+          </h2>
+        </div>
         <div className="flex items-center gap-4">
           <div className="relative hidden md:block">
             <input
@@ -56,8 +67,8 @@ export function Header({ title }: { title: string }) {
           </button>
 
           {user && (
-            <div className="flex items-center gap-2 pl-2 border-l border-slate-200 dark:border-slate-800">
-              <span className="text-xs font-semibold font-mono text-blue-600 dark:text-blue-400" title={`Logged in as ${user.email}`}>
+            <div className="flex items-center gap-2 pl-2 border-l border-slate-200 dark:border-slate-800 flex-shrink-0">
+              <span className="text-xs font-semibold font-mono text-blue-600 dark:text-blue-400 whitespace-nowrap hidden sm:inline-block" title={`Logged in as ${user.email}`}>
                 Agent: {user.username}
               </span>
               <button 
@@ -74,3 +85,4 @@ export function Header({ title }: { title: string }) {
     </header>
   );
 }
+

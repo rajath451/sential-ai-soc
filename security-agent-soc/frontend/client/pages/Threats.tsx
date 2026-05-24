@@ -77,7 +77,7 @@ export default function Threats() {
 
   return (
     <Layout title="Threat Sandbox & Intelligence">
-      <div className="p-8 space-y-6">
+      <div className="p-4 sm:p-6 md:p-8 space-y-6">
         
         {/* Dynamic Threat Selector Header */}
         <div className="flex flex-col md:flex-row gap-4 items-center justify-between bg-slate-900 border border-slate-800 p-4 rounded-xl shadow-md">
